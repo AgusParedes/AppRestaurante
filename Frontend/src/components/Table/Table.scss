@@ -1,0 +1,37 @@
+.Table {
+  position: absolute;
+
+  width: 70px;
+  height: 70px;
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 24px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.Table:hover {
+  transform: scale(1.05);
+}
+
+.Table.libre {
+  background-color: green;
+  color: white;
+}
+
+.Table.pendiente {
+  background-color: yellow;
+  color: black;
+}
+
+.Table.ocupada {
+  background-color: red;
+  color: white;
+}
