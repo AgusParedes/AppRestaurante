@@ -1,37 +1,122 @@
 .Table {
   position: absolute;
 
-  width: 70px;
-  height: 70px;
+  width: 85px;
+  height: 85px;
 
+  border-radius: 50%;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
 
   cursor: pointer;
 
-  transition: 0.3s;
+  transition: 0.25s;
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.35);
+
+  border: 4px solid rgba(255,255,255,0.15);
 }
 
 .Table:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.5);
 }
 
 .Table.libre {
-  background-color: green;
-  color: white;
-}
-
-.Table.pendiente {
-  background-color: yellow;
-  color: black;
+  background:
+    linear-gradient(
+      145deg,
+      #27ae60,
+      #2ecc71
+    );
+    color: #222;
 }
 
 .Table.ocupada {
+  background:
+    linear-gradient(
+      145deg,
+      #c0392b,
+      #ff3b30
+    );
+    color: #222;
+}
+
+.Table.pendiente {
+  background:
+    linear-gradient(
+      145deg,
+      #ffe13a,
+      #ffd60a
+    );
+
+  color: #222;
+}
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.5);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 999;
+}
+
+.modalContent {
+  background-color: white;
+  padding: 45px 30px;
+  border-radius: 14px;
+  min-width: 300px;
+  h2{
+    color: black;
+  }
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.options button:nth-child(1) {
+  background-color: green;
+  color: rgb(0, 0, 0);
+}
+
+.options button:nth-child(2) {
   background-color: red;
-  color: white;
+  color: black;
+}
+
+.options button:nth-child(3) {
+  background-color:yellow;
+  color: rgb(0, 0, 0);
+}
+
+.options button {
+  padding: 20px;
+  cursor: pointer;
+  border: none;
+}
+
+.modalButtons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: center;
+  button{
+    padding: 10px;
+    cursor: pointer;
+  }
 }
