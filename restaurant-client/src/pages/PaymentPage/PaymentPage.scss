@@ -1,0 +1,224 @@
+@use '../../styles/tokens' as *;
+
+// ─── PAYMENT SUMMARY ─────────────────────────────────────────────────────────
+.payment-summary {
+  padding: 0 $margin $stack-lg;
+
+  &__card {
+    background: $surface-container-lowest;
+    border: 1px solid $outline-variant;
+    border-radius: $radius-xl;
+    padding: 20px;
+    margin-top: $stack-md;
+    box-shadow: $shadow-soft;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid $surface-container;
+
+    &:last-of-type { border-bottom: none; }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: $stack-md;
+  }
+
+  &__img {
+    width: 56px;
+    height: 56px;
+    border-radius: $radius-md;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  &__name {
+    font-family: $font-display;
+    font-size: 15px;
+    font-weight: 600;
+    color: $on-surface;
+  }
+
+  &__qty {
+    font-size: 13px;
+    color: $on-surface-variant;
+    margin-top: 2px;
+  }
+
+  &__price {
+    font-family: $font-display;
+    font-size: 16px;
+    font-weight: 700;
+    color: $primary;
+  }
+
+  &__divider {
+    height: 1px;
+    background: $outline-variant;
+    margin: $stack-md 0;
+  }
+
+  &__totals {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: $on-surface-variant;
+
+  &--total {
+    padding-top: 10px;
+    margin-top: 4px;
+    border-top: 1px solid $outline-variant;
+    font-family: $font-display;
+    font-size: 18px;
+    font-weight: 600;
+    color: $on-surface;
+  }
+
+  &__amount {
+    font-size: 24px;
+    font-weight: 700;
+    color: $primary;
+  }
+}
+
+// ─── PAYMENT METHODS ─────────────────────────────────────────────────────────
+.payment-methods {
+  padding: 0 $margin $stack-md;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: $stack-md;
+    margin-top: $stack-md;
+  }
+}
+
+.payment-method {
+  display: flex;
+  align-items: center;
+  gap: $stack-md;
+  padding: $stack-md;
+  background: $surface-container-lowest;
+  border: 2px solid $outline-variant;
+  border-radius: $radius-xl;
+  transition: border-color 0.2s, background 0.2s;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+
+  &:hover { border-color: rgba($primary, 0.4); }
+
+  &--active {
+    border-color: $primary;
+    background: $primary-fixed;
+  }
+
+  &__icon-wrap {
+    width: 48px;
+    height: 48px;
+    border-radius: $radius-full;
+    background: $secondary-container;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $on-secondary-container;
+    flex-shrink: 0;
+  }
+
+  &__text { flex: 1; }
+
+  &__label {
+    font-family: $font-display;
+    font-size: 16px;
+    font-weight: 600;
+    color: $on-surface;
+  }
+
+  &__sub {
+    font-size: 13px;
+    color: $on-surface-variant;
+    margin-top: 2px;
+  }
+
+  &__check {
+    color: $primary;
+    font-size: 22px !important;
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+}
+
+// ─── CONFIRM BUTTON WRAPPER ───────────────────────────────────────────────────
+.payment-confirm {
+  padding: 0 $margin;
+}
+
+// ─── CONFIRMATION SCREEN ─────────────────────────────────────────────────────
+.confirmation-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  padding: $margin;
+  text-align: center;
+  gap: $stack-md;
+  background: $surface;
+
+  &__circle {
+    width: 96px;
+    height: 96px;
+    border-radius: $radius-full;
+    background: $primary-fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: $stack-md;
+    animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  }
+
+  &__icon {
+    font-size: 52px !important;
+    color: $primary;
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: 28px;
+    font-weight: 800;
+    color: $on-surface;
+  }
+
+  &__sub {
+    font-size: 15px;
+    color: $on-surface-variant;
+    max-width: 280px;
+  }
+
+  &__order {
+    font-family: $font-display;
+    font-size: 18px;
+    font-weight: 700;
+    color: $primary;
+    background: $primary-fixed;
+    padding: 8px 20px;
+    border-radius: $radius-full;
+  }
+}
+
+@keyframes popIn {
+  from { transform: scale(0); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}

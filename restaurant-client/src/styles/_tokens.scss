@@ -1,0 +1,53 @@
+// ─── COLORS (Vibrant Culinary Design System) ─────────────────────────────────
+$primary:                   #ab3600;
+$primary-container:         #ff5f1f;
+$on-primary:                #ffffff;
+$primary-fixed:             #ffdbcf;
+$primary-fixed-dim:         #ffb59c;
+$inverse-primary:           #ffb59c;
+
+$surface:                   #fcf9f8;
+$surface-dim:               #dcd9d9;
+$surface-container-lowest:  #ffffff;
+$surface-container-low:     #f6f3f2;
+$surface-container:         #f0edec;
+$surface-container-high:    #ebe7e7;
+$surface-variant:           #e5e2e1;
+
+$on-surface:                #1c1b1b;
+$on-surface-variant:        #5b4138;
+$inverse-surface:           #313030;
+$inverse-on-surface:        #f3f0ef;
+
+$outline:                   #8f7066;
+$outline-variant:           #e3bfb3;
+
+$secondary-container:       #d2e2ee;
+$secondary-fixed:           #d5e5f1;
+$on-secondary-fixed:        #0e1d26;
+$on-secondary-container:    #55656f;
+
+$error:                     #ba1a1a;
+
+// ─── TYPOGRAPHY ──────────────────────────────────────────────────────────────
+$font-display:  'Plus Jakarta Sans', sans-serif;
+$font-body:     'Work Sans', sans-serif;
+
+// ─── SPACING ─────────────────────────────────────────────────────────────────
+$stack-sm:   8px;
+$stack-md:   16px;
+$stack-lg:   32px;
+$gutter:     16px;
+$margin:     20px;
+
+// ─── RADIUS ──────────────────────────────────────────────────────────────────
+$radius-sm:   4px;
+$radius-md:   8px;
+$radius-lg:   12px;
+$radius-xl:   16px;
+$radius-2xl:  20px;
+$radius-full: 9999px;
+
+// ─── SHADOWS ─────────────────────────────────────────────────────────────────
+$shadow-card: 0 12px 32px -4px rgba(49, 48, 48, 0.06);
+$shadow-soft: 0 4px 16px rgba(49, 48, 48, 0.06);

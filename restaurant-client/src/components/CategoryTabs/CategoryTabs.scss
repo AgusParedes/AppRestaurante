@@ -1,0 +1,48 @@
+@use '../../styles/tokens' as *;
+
+.category-tabs {
+  position: sticky;
+  top: 64px;
+  background: $surface;
+  z-index: 40;
+  padding: $stack-md $margin $stack-sm;
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar { display: none; }
+
+  &__item {
+    white-space: nowrap;
+    font-family: $font-display;
+    font-size: 16px;
+    font-weight: 600;
+    color: $on-surface-variant;
+    padding-bottom: 8px;
+    position: relative;
+    transition: color 0.2s;
+    cursor: pointer;
+    background: none;
+    border: none;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 3px;
+      background: $primary;
+      border-radius: $radius-full;
+      transition: width 0.25s ease;
+    }
+
+    &--active {
+      color: $primary;
+
+      &::after { width: 24px; }
+    }
+  }
+}

@@ -1,0 +1,68 @@
+@use '../../styles/tokens' as *;
+
+.menu-section {
+  padding: 0 $margin;
+  display: flex;
+  flex-direction: column;
+  gap: $stack-md;
+
+  &__heading {
+    font-family: $font-display;
+    font-size: 22px;
+    font-weight: 700;
+    color: $on-surface;
+    border-left: 4px solid $primary;
+    padding-left: 12px;
+  }
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $stack-md;
+}
+
+// ─── CTA STRIP ───────────────────────────────────────────────────────────────
+.cta-strip {
+  margin: $stack-lg $margin 0;
+  background: $secondary-fixed;
+  padding: 20px 24px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $stack-md;
+
+  &__title {
+    font-family: $font-display;
+    font-size: 18px;
+    font-weight: 600;
+    color: $on-secondary-fixed;
+  }
+
+  &__sub {
+    font-size: 14px;
+    color: rgba($on-secondary-fixed, 0.7);
+    margin-top: 2px;
+  }
+
+  &__btn {
+    width: 48px;
+    height: 48px;
+    border-radius: $radius-full;
+    background: $inverse-surface;
+    color: $inverse-on-surface;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    border: none;
+    animation: bounce 1.5s ease-in-out infinite;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}

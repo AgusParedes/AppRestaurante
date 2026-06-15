@@ -1,0 +1,23 @@
+@use '../../styles/tokens' as *;
+
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
+  height: 64px;
+  background: $surface;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 $margin;
+  z-index: 50;
+  box-shadow: 0 1px 0 $outline-variant;
+  justify-content: center;
+}
+
+.top-bar__logo {
+  width: 200px;
+}
