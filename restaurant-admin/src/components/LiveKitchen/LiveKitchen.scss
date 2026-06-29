@@ -1,0 +1,172 @@
+@use '../../styles/variables' as *;
+
+.live-kitchen {
+  width: $kitchen-width;
+  min-width: $kitchen-width;
+  background: $bg-panel;
+  border-right: 1px solid $border;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+
+  &__header {
+    @include flex-between;
+    padding: 16px 16px 12px;
+    border-bottom: 1px solid $border;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: 11px;
+    font-weight: 700;
+    color: $text-secondary;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  &__badge {
+    background: rgba($occupied, 0.2);
+    color: $occupied;
+    border: 1px solid rgba($occupied, 0.35);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 2px 8px;
+    border-radius: 20px;
+    animation: pulse-badge 1.6s ease-in-out infinite;
+  }
+
+  &__list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    @include scrollbar;
+  }
+
+  &__empty {
+    color: $text-muted;
+    font-size: 13px;
+    text-align: center;
+    padding: 40px 0;
+  }
+
+  &__footer {
+    display: flex;
+    border-top: 1px solid $border;
+    padding: 0;
+  }
+
+  &__stat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 8px;
+
+    & + & {
+      border-left: 1px solid $border;
+    }
+  }
+
+  &__stat-num {
+    font-family: $font-display;
+    font-size: 22px;
+    font-weight: 700;
+    color: $text-primary;
+    line-height: 1;
+  }
+
+  &__stat-label {
+    font-size: 9px;
+    color: $text-muted;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 3px;
+  }
+}
+
+.kitchen-card {
+  @include card(12px);
+  border-left: 3px solid $border;
+  transition: all $transition;
+
+  &--priority {
+    border-left-color: $occupied;
+    background: rgba($occupied, 0.06);
+
+    .kitchen-card__table {
+      color: $occupied;
+    }
+  }
+
+  &--marking {
+    opacity: 0.6;
+    transform: scale(0.97);
+
+    .kitchen-card__btn {
+      background: $available;
+    }
+  }
+
+  &__top {
+    @include flex-between;
+    margin-bottom: 8px;
+  }
+
+  &__table {
+    font-family: $font-display;
+    font-size: 12px;
+    font-weight: 700;
+    color: $text-primary;
+    letter-spacing: 0.05em;
+  }
+
+  &__timer {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-family: $font-mono;
+    font-size: 11px;
+    color: $text-secondary;
+  }
+
+  &__timer-icon {
+    font-size: 12px;
+  }
+
+  &__items {
+    list-style: none;
+    margin-bottom: 10px;
+
+    li {
+      font-size: 12px;
+      color: $text-secondary;
+      padding: 2px 0;
+      border-bottom: 1px solid $border;
+      
+      &:last-child { border-bottom: none; }
+    }
+  }
+
+  &__btn {
+    @include btn;
+    width: 100%;
+    font-size: 12px;
+    padding: 7px;
+
+    &:disabled {
+      background: $available;
+      cursor: default;
+      transform: none;
+    }
+  }
+}
+
+@keyframes pulse-badge {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}

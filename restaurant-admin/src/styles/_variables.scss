@@ -1,0 +1,108 @@
+// ===== SOFITA Design Tokens =====
+
+// Colors
+$bg-dark: #0f0f1a;
+$bg-panel: #16162a;
+$bg-card: #1e1e35;
+$bg-card-hover: #252545;
+
+$primary: #4f6ef7;
+$primary-light: #6b87ff;
+$primary-glow: rgba(79, 110, 247, 0.25);
+
+$available: #2ecc71;
+$available-bg: rgba(46, 204, 113, 0.15);
+$occupied: #e74c3c;
+$occupied-bg: rgba(231, 76, 60, 0.15);
+$pending: #f1c40f;
+$pending-bg: rgba(241, 196, 15, 0.15);
+
+$text-primary: #f0f0ff;
+$text-secondary: #8888aa;
+$text-muted: #555577;
+
+$border: rgba(255, 255, 255, 0.07);
+$border-active: rgba(79, 110, 247, 0.4);
+
+$sidebar-width: 220px;
+$topbar-height: 60px;
+$kitchen-width: 260px;
+
+// Typography
+$font-display: 'Poppins', sans-serif;
+$font-body: 'Inter', sans-serif;
+$font-mono: 'JetBrains Mono', monospace;
+
+// Transitions
+$ease: cubic-bezier(0.4, 0, 0.2, 1);
+$transition: 0.2s $ease;
+
+// Shadows
+$shadow-card: 0 4px 24px rgba(0, 0, 0, 0.35);
+$shadow-glow: 0 0 20px $primary-glow;
+
+// ===== Mixins =====
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin card($padding: 16px) {
+  background: $bg-card;
+  border: 1px solid $border;
+  border-radius: 12px;
+  padding: $padding;
+  box-shadow: $shadow-card;
+}
+
+@mixin status-badge($color) {
+  background: rgba($color, 0.15);
+  color: $color;
+  border: 1px solid rgba($color, 0.3);
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+@mixin btn($bg: $primary, $color: white) {
+  background: $bg;
+  color: $color;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-family: $font-body;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all $transition;
+  &:hover {
+    filter: brightness(1.12);
+    transform: translateY(-1px);
+  }
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+@mixin scrollbar {
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $text-muted;
+    border-radius: 4px;
+  }
+}

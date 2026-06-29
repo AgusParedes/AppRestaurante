@@ -1,0 +1,91 @@
+@use '../../styles/variables' as *;
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $topbar-height;
+  background: $bg-panel;
+  border-bottom: 1px solid $border;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  z-index: 100;
+  gap: 32px;
+
+  &__brand {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+    min-width: 110px;
+  }
+
+  &__logo {
+    font-family: $font-display;
+    font-size: 18px;
+    font-weight: 700;
+    color: $primary-light;
+    letter-spacing: 0.1em;
+  }
+
+  &__sub {
+    font-size: 9px;
+    color: $text-secondary;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  &__links {
+    display: flex;
+    gap: 4px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: $text-secondary;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all $transition;
+
+    &:hover {
+      background: $bg-card-hover;
+      color: $text-primary;
+    }
+
+    &--active {
+      background: $primary-glow;
+      color: $primary-light;
+      border: 1px solid $border-active;
+    }
+
+    &-icon {
+      font-size: 15px;
+    }
+  }
+
+  &__right {
+    margin-left: auto;
+    text-align: right;
+  }
+
+  &__date {
+    font-size: 11px;
+    color: $text-secondary;
+    text-transform: capitalize;
+    letter-spacing: 0.03em;
+  }
+
+  &__time {
+    font-family: $font-display;
+    font-size: 20px;
+    font-weight: 700;
+    color: $primary-light;
+    line-height: 1.1;
+  }
+}

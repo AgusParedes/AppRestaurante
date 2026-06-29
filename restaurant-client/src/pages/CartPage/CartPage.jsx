@@ -22,9 +22,8 @@ const CartPage = ({ cartItems, setCartItems }) => {
   };
 
   const subtotal = cartItems.reduce((s, i) => s + i.price * i.qty, 0);
-  const tax      = subtotal * 0.1;
   const tip      = subtotal * 0.1;
-  const total    = subtotal + tax + tip;
+  const total    = subtotal + tip;
 
   return (
     <>
@@ -71,7 +70,6 @@ const CartPage = ({ cartItems, setCartItems }) => {
               <h3 className="order-summary__title">Resumen del Pedido</h3>
               <div className="order-summary__rows">
                 <div className="order-summary__row"><span>Subtotal</span><span>${subtotal.toFixed(2)}</span></div>
-                <div className="order-summary__row"><span>Impuestos (10%)</span><span>${tax.toFixed(2)}</span></div>
                 <div className="order-summary__row"><span>Propina sugerida</span><span>${tip.toFixed(2)}</span></div>
               </div>
               <div className="order-summary__total">
